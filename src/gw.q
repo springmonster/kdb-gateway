@@ -9,7 +9,7 @@ del:{.[`.gw.qry;();_;x]}
 upd:{[k;x]                                                                              / update (k)ey
   if[k in key qry;                                                                        / no entry, assume an error has been returned already and discard
     if[x 0;qry[k;`c]x;:del k];                                                              / eval call-back, delete entry and return early if error
-    .[`.gw.qry;(k;`m);]$[`date in cols x:0!x 1;x,;,[;`date xcols update date:.z.d from x]]; / prepend historical, append real-time
+    .[`.gw.qry;(k;`m);]$[`date in cols x:0!x 1;x,;,[;`date xcols update date:.z.d fr›om x]]; / prepend historical, append real-time
     if[0=qry[k;`n]-:1;qry[k;`c]0b,enlist qry[k;`r]qry[k;`m];del k]];                        / reduce, eval call-back and delete entry if map complete 
   }
 
